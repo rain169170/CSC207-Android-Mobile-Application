@@ -1,0 +1,32 @@
+Dear group_0639
+
+This semester, we talked about MVP, the Model-View-Presenter architecture. It has many advantages, particularly when working with Android. As you can see from your project, your activity classes have methods that are specific to Android. If you encapsulate the rest of your code sufficiently, it is possible to port it to another platform simply by creating a new UI (for example, a website).
+
+Encapsulation can take on many forms. You can package your View classes together. You can ensure that your dependencies go one-way, towards the inner more abstract layers. You can incorporate SOLID principles as much as possible and design patterns where they make sense.
+Here is feedback that is specific to your project:
+
+You made good use of…
++ MVP design for the Gambling game
++ The first two games extended the GameView and GameManager. This gives structure for making additional games
++ Façade design pattern in the UserManager
++ You tried following MVP design for most of your app
+
+The user sees…
++ Login screen with a separate signup page if they haven’t created an account
++ The user can play three games:
+  - Cat game - the user tries to capture the cat by building wall blocks on the grid, while the cat tries to escape. The game has three difficulty levels
+  - Snake game. The game has three difficulty levels. The first level is simply the snake game. The second level adds lethal walls that need to be avoided. The third level contains four enemies that try to catch the snake.
+  - Gambling game. The game has two levels. The first level is gambling against a coin flip. The second level is betting money on the input and desired return. The game has a basic UI and logic.
++ In general, your app has a good UI design and the little logos for each game was a nice touch
+
+A good next step would be to…
++ Try to incorporate game 3 with your other two games. Your first two games worked well together as they had a similar code structure and inherited from the same superclasses. It seems that your game 3 was built separately from the rest of the app.
++ When you use a design pattern make sure there is a good reason to use it and you are not simply using it for the sake of the assignment. For example, the Factory design pattern in the Snake game was simply a single method with a switch statement that could have been placed in the StrategyMaker class. Instead, you have defined a new class for this simple method. This makes the program more complicated than it should be
++ Class SaveScoreActivity could use some documentation.
++ ScoreBoradFileHandler is used directly by the ScoreBoardManager. Instead you should apply Dependency Inversion to satisfy the conditions of clean architecture.
+
+We hope that you enjoyed working on this project and found it a useful learning experience.
+
+Cheers,
+The CSC207 Instructional Team
+
